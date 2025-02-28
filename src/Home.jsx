@@ -63,7 +63,7 @@ const Home = () => {
     setSelectedCity(selectedCity);
 
     axios
-      .get(`http://api.weatherapi.com/v1/current.json?key=8b26d241c5564b52a41183325251302&q=${selectedCity}&aqi=no`)
+      .get(`https://api.weatherapi.com/v1/current.json?key=8b26d241c5564b52a41183325251302&q=${selectedCity}&aqi=no`)
       .then(response => {
         setWeather(response.data);
         changeBg(response.data.current.condition.text);
@@ -109,7 +109,7 @@ const Home = () => {
           console.log(response.data.features[0].properties.city);
            setCity(response.data.features[0].properties.city)
            let city = response.data.features[0].properties.city;
-          axios.get(`http://api.weatherapi.com/v1/current.json?key=8b26d241c5564b52a41183325251302&q=${city}&aqi=no`)
+          axios.get(`https://api.weatherapi.com/v1/current.json?key=8b26d241c5564b52a41183325251302&q=${city}&aqi=no`)
           .then(response => {
             // console.log(response.data);
             setWeather(response.data);
